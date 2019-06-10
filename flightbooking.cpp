@@ -1,19 +1,30 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std; 
 
 
-int seat() {
+int reservation() {
+    
+char x; 
+int i;
 
 char answer[10];
+char letters[26] = "ABCDEFGHIJKLMNOP";
+
+x = letters[rand() % 26];
+
+i = (rand()% 50);
+
+
 
 	cout << "Would you like a window or aisle seat?" << endl;
 	cin >> answer;
 		if (answer == "window") {
-			cout << "Your seat is 15A";
+			cout << "Your seat is: " << x << i << endl;
 		} else  {
-			cout << "Your seat is 13C";
+			cout << "Your seat is: " << x << i << endl;
                 }
 };
 
@@ -26,6 +37,7 @@ int date;
 char answer[10];
 int number;
 char airline[10];
+int returndate;
 
 cout << "Welcome to the travel program." << endl;
 
@@ -39,6 +51,8 @@ cout << "What month would you like to leave?"<< endl;
 cin >> month; 
 cout << "What day would you like to depart?"<< endl;
 cin >> date;
+cout << "What day would you like to return?"<< endl;
+cin >> returndate;
 
 cout << "What airline would you like to fly?" << endl; 
 cin >> airline;
@@ -52,11 +66,12 @@ cin >> number;
 
 if (number == 1){
 
-	seat();
+	reservation();
 } else if (number == 2) {
-	seat();
+	reservation();
 } else {
-	seat();
+	reservation();
 } 
 return 0;
 };
+
