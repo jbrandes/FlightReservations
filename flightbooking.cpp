@@ -1,43 +1,25 @@
+
 #include <iostream>
 #include <string>
-
+#include <cstdlib>
 
 using namespace std; 
-
-
-int reservation() {
-    
-char x; 
-int i;
-
-char answer[10];
-char letters[26] = "ABCDEFGHIJKLMNOP";
-
-x = letters[rand() % 26];
-
-i = (rand()% 50);
-
-
-
-	cout << "Would you like a window or aisle seat?" << endl;
-	cin >> answer;
-		if (answer == "window") {
-			cout << "Your seat is: " << x << i << endl;
-		} else  {
-			cout << "Your seat is: " << x << i << endl;
-                }
-};
-
-int main() {
 
 char destination[20];
 char origin[20];
 char month[10];
 int date;
-char answer[10];
+
 int number;
 char airline[10];
 int returndate;
+int reservation();
+
+
+
+int main() {
+
+
 
 cout << "Welcome to the travel program." << endl;
 
@@ -60,9 +42,10 @@ cin >> airline;
 cout << "There are three flights going to " << destination << " on " << month << " " << date << " from " << "" << origin << " on " << airline << " Airlines" << endl;
 
 cout << "To choose Flight F266 non-stop at 1 p.m. press 1" << endl;
-cout << "To choose Flight G777 leaving at 4 p.m. with a stop in Germany press 2" << endl;
+cout << "To choose Flight G777 leaving at 4 p.m. with a layover press 2" << endl;
 cout << "To Choose Flight L879 leaving at 8 p.m. non-stop press 3" << endl;
 cin >> number;
+
 
 if (number == 1){
 
@@ -71,7 +54,31 @@ if (number == 1){
 	reservation();
 } else {
 	reservation();
-} 
+	
 return 0;
-};
+}
+}
 
+
+
+
+int reservation() {
+    int Seat;
+    int compGuess;
+    char answer[10];
+   
+    
+    if (rand()%2) {
+        char Seat = (rand()%('F'-'A')) + 'A';
+    
+    int compGuess = rand()%30 + 1;
+    
+	cout << "Would you like a window or aisle seat?" << endl;
+	cin >> answer;
+		if (answer == "window") {
+			cout << "Your seat is: " << Seat << compGuess << endl;
+		} else  {
+			cout << "Your seat is: " << Seat << compGuess << endl;
+                }
+    }
+}
