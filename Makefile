@@ -1,11 +1,11 @@
 all:
 
-	g++ flightbooking.cpp -o Make
+	g++ flightbooking.cpp -o Flight
 
 run:
-	g++ flightbooking.cpp -o Make
+	g++ flightbooking.cpp -o flight
 	
 
 	
 clean:
-        rm -rf *.o test
+        rm -rf *.o flight
