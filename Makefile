@@ -5,5 +5,7 @@ all:
 run:
 	g++ flightbooking.cpp -o Make
 	
-clean: 
-	rm flightbooking.cpp
+
+	
+clean:
+        rm -rf *.o test
